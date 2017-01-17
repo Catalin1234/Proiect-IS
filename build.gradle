@@ -1,0 +1,34 @@
+group 'com.endava.internship'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+group = 'com.endava.hello'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+
+    maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    compile group: 'org.springframework', name: 'spring-webmvc', version:'4.1.4.RELEASE'
+    compile group: 'org.springframework', name: 'spring-jdbc', version:'4.1.4.RELEASE'
+    compile group: 'javax.servlet', name: 'jstl', version:'1.2'
+    compile group: 'taglibs', name: 'standard', version:'1.1.2'
+    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.34'
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version:'3.1.0'
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}
+
+// need to set the stopPort and stopKey so we are able to stop jetty!
+jettyRunWar.stopPort = 8090
+jettyRunWar.stopKey = 'stopKey'
+jettyStop.stopPort = 8090
+jettyStop.stopKey = 'stopKey'
+jettyRun.stopPort = 8090
+jettyRun.stopKey = 'stopKey'

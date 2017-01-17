@@ -1,0 +1,142 @@
+body {
+    background-image: url("images/img0.jpg");
+    background-size: cover;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    color: #666;
+    font-family: 'Lato', sans-serif;
+}
+
+div.transbox {
+    background-color: rgba(0,0,0,0.5);
+    filter: alpha(opacity=60);
+    position: relative;
+    height: 60px;
+}
+
+.img {
+    top: 5px;
+    position: absolute;
+    opacity: 1;
+}
+
+.text {
+    position: relative;
+    text-align: center;
+    top: 20px;
+    font-weight: bold;
+    color: #ff794d;
+}
+
+#logoutButton {
+    border: 0;
+    border-radius: 2px;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    background-color: red;
+    cursor:pointer;
+    outline: none;
+    float: right;
+    color: white;
+    margin-right:20px;
+    margin-top: -5px;
+}
+
+#logoutButton:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+#navbarName {
+    float: right;
+    margin-right: 100px;
+    margin-top: -33px;
+    font-weight: bold;
+    color: #ff794d;
+}
+
+#selectTraining {
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+    border-radius: 5px;
+    text-align: justify;
+    padding: 5px;
+}
+
+#label {
+    font-weight: 700;
+    /*font-size: .8em;*/
+    color: #ff794d;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 2em;
+}
+
+#tddl {
+    margin-left: 125px;
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-size: inherit;
+    overflow: hidden;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#register {
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+    border-radius: 5px;
+    text-align: justify;
+    padding: 5px;
+}
+
+#register label {
+    font-weight: 700;
+    font-size: .8em;
+    color: #ff794d;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 2em;
+}
+
+
+#register input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: .9em;
+    color: #888;
+}
+
+div#trainings form#register input#button {
+    margin-top: 0px;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    background-color: #ffa64d;
+    cursor:pointer;
+    outline: none;
+}
+
+div#trainings form#register input#button:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+}

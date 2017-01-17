@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2211"
+   height="13"
+   width="13"
+   version="1.0"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Gray_star_unboxed_variant1.svg">
+  <metadata
+     id="metadata3940">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3938" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1024"
+     inkscape:window-height="538"
+     id="namedview3936"
+     showgrid="false"
+     inkscape:zoom="19.091883"
+     inkscape:cx="9.5908183"
+     inkscape:cy="6.7739263"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2211" />
+  <g
+     id="g3312"
+     fill-rule="evenodd"
+     transform="matrix(.92883 0 0 .97610 35.151 -4.0109)">
+    <path
+       id="path3278"
+       d="m42.227 8.7854l-4.346-2.917-4.322 2.9536 1.431-5.0349-4.144-3.1972 5.231-0.19482 1.759-4.9297 1.802 4.9146 5.232 0.1505-4.117 3.2322 1.474 5.0227z"
+       transform="translate(-68.622 8.7167)"
+       fill="#069"
+       style="fill:#b3b3b3" />
+    <path
+       id="path3288"
+       style="color:#000000;fill:#666666;fill-opacity:1"
+       d="m-30.792 4.1924l0.473 1.2957-1.563 4.6409-4.575 0.159-1.321-0.967 5.21-0.2019 1.776-4.9267z"
+       fill="#036" />
+    <path
+       id="path3290"
+       style="color:#000000;fill:#666666"
+       d="m-24.861 10.118l-3.087-0.001-1.024-1.0159 5.201 0.1356-1.09 0.8813z"
+       fill="#036" />
+    <path
+       id="path3292"
+       style="color:#000000;fill:#666666"
+       d="m-34.081 16.865l-0.976 0.654 1.43-5.012 0.766 0.625-1.22 3.733z"
+       fill="#036" />
+  </g>
+</svg>
