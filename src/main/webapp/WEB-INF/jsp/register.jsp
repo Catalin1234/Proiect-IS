@@ -18,28 +18,30 @@
 <div class="container">
     <form class="login-box animated fadeInUp" action="register.htm" method="POST">
         <div class="box-header">
-            <h2>Log In</h2>
+            <h2>Register</h2>
         </div>
         <label>Username</label>
         <br/>
-        <input type="text" name="username" id="username" placeholder="Enter username" required="required" autofocus="autofocus"/>
+        <input type="text" name="username" id="username" placeholder="Enter username"  autofocus="autofocus"/>
         <br/>
         <label>Password</label>
         <br/>
-        <input type="password" id="password" name="password" placeholder="Enter password" required="required"/>
+        <input type="password" id="password" name="password" placeholder="Enter password" />
         <br/>
         <br>
         <label>First Name</label>
-        <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required="required"/>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter first name" />
         </br>
         <br>
         <label>last Name</label>
-        <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required="required"/>
+        <input type="text" id="lastName" name="lastName" placeholder="Enter last name"/>
         </br>
-        <input id="button" type="submit" name="register" value="register"/>
+        <input id="button" type="submit" name="register" value="Register"/>
+        Already an user? <a href="login.htm">Sign in!</a>
         <c:out value="${message}"/>
         <br/>
     </form>
+
 
 </div>
 </body>
