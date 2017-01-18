@@ -68,7 +68,8 @@
                               <td><c:out value="${book.author}"></c:out> </td>
                               <td><c:out value="${book.price}"></c:out> </td>
 
-                              <td><input type="button" value="addBook" name ="addBook"  > </td>
+                              <td><input type="submit" value="Add to Cart" name ="addBook"  > </td>
+                              <input type = "hidden" name = "bookId" value = "${book.bookId}">
 
                           </tr>
                       </c:forEach>

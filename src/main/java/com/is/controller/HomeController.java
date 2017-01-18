@@ -40,11 +40,13 @@ public class HomeController {
         return modelView;
     }
 
-    @RequestMapping(value = "/addBook.htm", method = RequestMethod.POST, params = {"addBook=addBook"})
-    public ModelAndView addToCart(@RequestParam("userId") int userId, @RequestParam("name") String name ){
+    @RequestMapping(value = "/addBook.htm", method = RequestMethod.POST)
+    public ModelAndView addToCart( @RequestParam(value = "bookId") int bookId, HttpSession session){
         ModelAndView modelAndView = new ModelAndView("books");
-        int id = homeService.getBooks().getIdByName(name);
-        homeService.addToCart(id, userId);
+        int userId = (int)session.getAttribute("userId");
+
+        System.out.println("user ID: " + userId+" bookId: "+ bookId);
+        homeService.addToCart(bookId, userId);
         System.out.println("ADAUGAT");
         return  modelAndView;
     }

@@ -42,6 +42,7 @@ public class LoginController {
         }
         List<Book> books = homeService.getBooks().getAllBooks();
         session.setAttribute("bookList",books);
+        session.setAttribute("userId",loginService.getUser().getUserId());
         return modelView;
     }
 
