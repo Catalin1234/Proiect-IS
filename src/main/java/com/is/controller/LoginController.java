@@ -31,7 +31,7 @@ public class LoginController {
         ModelAndView modelView;
         if (loginService.loginUser(username, password)) {
             System.out.println("Logged in!");
-            modelView = new ModelAndView("register");
+            modelView = new ModelAndView("home");
         } else {
             modelView = new ModelAndView("login");
             modelView.addObject("message","Invalid credentials");
