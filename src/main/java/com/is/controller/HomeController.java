@@ -1,5 +1,6 @@
 package com.is.controller;
 
+import com.is.model.Book;
 import com.is.model.User;
 import com.is.services.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,14 @@ public class HomeController {
     public ModelAndView goToBooks() {
         ModelAndView modelView = new ModelAndView("books");
         return modelView;
+    }
+
+    @RequestMapping(value = "/addBook.htm", method = RequestMethod.POST, params = {"addBook=addBook"})
+    public ModelAndView addToCart(@RequestParam("userId") int userId, @RequestParam("name") String name ){
+        ModelAndView modelAndView = new ModelAndView("books");
+        int id = homeService.getBooks().getIdByName(name);
+        homeService.addToCart(id, userId);
+        System.out.println("ADAUGAT");
+        return  modelAndView;
     }
 }

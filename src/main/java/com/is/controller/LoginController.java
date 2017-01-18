@@ -1,6 +1,8 @@
 package com.is.controller;
 
+import com.is.model.Book;
 import com.is.model.User;
+import com.is.services.HomeService;
 import com.is.services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,8 @@ public class LoginController {
 
     @Autowired
     private LoginService loginService;
+    @Autowired
+    private HomeService homeService;
 
     @RequestMapping(value = "/login.htm", method = RequestMethod.GET)
     public String enter() {
@@ -36,6 +40,8 @@ public class LoginController {
             modelView = new ModelAndView("login");
             modelView.addObject("message","Invalid credentials");
         }
+        List<Book> books = homeService.getBooks().getAllBooks();
+        session.setAttribute("bookList",books);
         return modelView;
     }
 

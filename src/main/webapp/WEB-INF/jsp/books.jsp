@@ -10,6 +10,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        function message() {
+        alert("adaugat!");
+        }
+
+        function submitToCart(bookId){
+                    document.getElementById("bookId").value = bookId;
+                    document.getElementById("editForm").submit();
+                }
+
+        </script>
 </head>
 <body>
    <nav class="navbar navbar-inverse">
@@ -25,5 +36,52 @@
        </ul>
      </div>
    </nav>
+
+
+<form action="addBook.htm" method="post">
+    <div class="box-header">
+
+
+   <!--Shopping Cart table-->
+   <form action="list.htm" method="get">
+      <div class="table-responsive">
+          <table class="table product-table">
+              <!--Table head-->
+              <thead>
+                  <tr>
+                      <th></th>
+                      <th>Name</th>
+                      <th>Author</th>
+                      <th>Price</th>
+
+                      <th></th>
+                  </tr>
+              </thead>
+              <!--/Table head-->
+
+              <!--Table body-->
+              <tbody>
+
+                  <c:forEach items="${bookList}" var="book">
+                          <tr>
+                              <td><c:out value="${book.name}"></c:out> </td>
+                              <td><c:out value="${book.author}"></c:out> </td>
+                              <td><c:out value="${book.price}"></c:out> </td>
+
+                              <td><input type="button" value="addBook" name ="addBook"  > </td>
+
+                          </tr>
+                      </c:forEach>
+
+              </tbody>
+              <!--/Table body-->
+          </table>
+      </div>
+      </form>
+      <!--/Shopping Cart table-->
+
+</form>
+
+
 </body>
 </html>
