@@ -1,7 +1,7 @@
-package com.endava.dao.mapper;
+package com.is.dao.mapper;
 
 
-import com.endava.model.User;
+import com.is.model.User;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

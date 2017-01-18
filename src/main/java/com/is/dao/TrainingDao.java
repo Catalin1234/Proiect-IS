@@ -1,6 +1,6 @@
-package com.endava.dao;
+package com.is.dao;
 
-import com.endava.model.Training;
+import com.is.model.Training;
 
 import java.util.List;
 

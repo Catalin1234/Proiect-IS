@@ -1,9 +1,9 @@
-package com.endava.controller;
+package com.is.controller;
 
-import com.endava.model.Training;
-import com.endava.model.User;
-import com.endava.services.EditorService;
-import com.endava.services.EmployeeService;
+import com.is.model.Training;
+import com.is.model.User;
+import com.is.services.EditorService;
+import com.is.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 
 /**

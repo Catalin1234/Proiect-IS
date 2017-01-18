@@ -1,7 +1,7 @@
-package com.endava.controller;
+package com.is.controller;
 
-import com.endava.model.Training;
-import com.endava.services.EditorService;
+import com.is.model.Training;
+import com.is.services.EditorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

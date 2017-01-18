@@ -1,10 +1,8 @@
-package com.endava.services;
+package com.is.services;
 
-import com.endava.dao.implementation.DefaultUserDao;
-import com.endava.dao.mapper.UserRowMapper;
-import com.endava.model.User;
+import com.is.dao.implementation.DefaultUserDao;
+import com.is.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 /**

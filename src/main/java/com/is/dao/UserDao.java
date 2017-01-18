@@ -1,10 +1,9 @@
-package com.endava.dao;
+package com.is.dao;
 
-import com.endava.model.Rating;
-import com.endava.model.Training;
-import com.endava.model.User;
+import com.is.model.Rating;
+import com.is.model.Training;
+import com.is.model.User;
 
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 

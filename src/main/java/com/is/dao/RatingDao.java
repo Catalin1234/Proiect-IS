@@ -1,8 +1,6 @@
-package com.endava.dao;
+package com.is.dao;
 
-import com.endava.model.Rating;
-import com.endava.model.Training;
-import com.endava.model.User;
+import com.is.model.Rating;
 
 import java.util.List;
 

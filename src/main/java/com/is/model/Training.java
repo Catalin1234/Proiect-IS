@@ -1,4 +1,4 @@
-package com.endava.model;
+package com.is.model;
 
 //from sql to util
 import java.util.Date;

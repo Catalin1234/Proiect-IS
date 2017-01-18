@@ -1,11 +1,11 @@
-group 'com.endava.internship'
+group 'com.is.internship'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'jetty'
 
-group = 'com.endava.hello'
+group = 'com.is.hello'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

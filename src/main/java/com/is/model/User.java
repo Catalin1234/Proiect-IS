@@ -1,4 +1,4 @@
-package com.endava.model;
+package com.is.model;
 
 /**
  * Created by sprodan on 8/3/2016.

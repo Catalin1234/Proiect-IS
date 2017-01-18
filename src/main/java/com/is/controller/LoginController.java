@@ -1,10 +1,10 @@
-package com.endava.controller;
+package com.is.controller;
 
-import com.endava.model.Training;
-import com.endava.model.User;
-import com.endava.services.EditorService;
-import com.endava.services.EmployeeService;
-import com.endava.services.LoginService;
+import com.is.model.Training;
+import com.is.model.User;
+import com.is.services.EditorService;
+import com.is.services.EmployeeService;
+import com.is.services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

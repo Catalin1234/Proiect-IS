@@ -1,10 +1,8 @@
-package com.endava.dao.implementation;
+package com.is.dao.implementation;
 
-import com.endava.dao.RatingDao;
-import com.endava.dao.mapper.RatingRowMapper;
-import com.endava.model.Rating;
-import com.endava.model.Training;
-import com.endava.model.User;
+import com.is.dao.RatingDao;
+import com.is.dao.mapper.RatingRowMapper;
+import com.is.model.Rating;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

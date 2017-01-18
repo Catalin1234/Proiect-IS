@@ -1,10 +1,10 @@
-package com.endava.services;
+package com.is.services;
 
-import com.endava.dao.implementation.DefaultEnrollmentDao;
-import com.endava.dao.implementation.DefaultRatingDao;
-import com.endava.dao.implementation.DefaultTrainingDao;
-import com.endava.model.Training;
-import com.endava.model.User;
+import com.is.dao.implementation.DefaultEnrollmentDao;
+import com.is.dao.implementation.DefaultRatingDao;
+import com.is.dao.implementation.DefaultTrainingDao;
+import com.is.model.Training;
+import com.is.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,10 +1,8 @@
-package com.endava.dao.implementation;
+package com.is.dao.implementation;
 
-import com.endava.dao.EnrollmentDao;
-import com.endava.dao.mapper.EnrollmentRowMapper;
-import com.endava.dao.mapper.UserRowMapper;
-import com.endava.model.Enrollment;
-import com.endava.model.User;
+import com.is.dao.EnrollmentDao;
+import com.is.dao.mapper.EnrollmentRowMapper;
+import com.is.model.Enrollment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;

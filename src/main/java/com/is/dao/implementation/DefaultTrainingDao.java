@@ -1,12 +1,11 @@
-package com.endava.dao.implementation;
+package com.is.dao.implementation;
 
-import com.endava.dao.TrainingDao;
-import com.endava.dao.mapper.TrainingRowMapper;
-import com.endava.model.Training;
+import com.is.dao.TrainingDao;
+import com.is.dao.mapper.TrainingRowMapper;
+import com.is.model.Training;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;

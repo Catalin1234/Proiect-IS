@@ -1,7 +1,6 @@
-package com.endava.dao;
+package com.is.dao;
 
-import com.endava.model.Enrollment;
-import com.endava.model.User;
+import com.is.model.Enrollment;
 
 import java.util.List;
 

@@ -1,14 +1,14 @@
-package com.endava.dao.implementation;
+package com.is.dao.implementation;
 
-import com.endava.dao.UserDao;
-import com.endava.dao.mapper.EnrollmentRowMapper;
-import com.endava.dao.mapper.RatingRowMapper;
-import com.endava.dao.mapper.TrainingRowMapper;
-import com.endava.dao.mapper.UserRowMapper;
-import com.endava.model.Enrollment;
-import com.endava.model.Rating;
-import com.endava.model.Training;
-import com.endava.model.User;
+import com.is.dao.UserDao;
+import com.is.dao.mapper.EnrollmentRowMapper;
+import com.is.dao.mapper.RatingRowMapper;
+import com.is.dao.mapper.TrainingRowMapper;
+import com.is.dao.mapper.UserRowMapper;
+import com.is.model.Enrollment;
+import com.is.model.Rating;
+import com.is.model.Training;
+import com.is.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,8 +18,6 @@ import org.springframework.stereotype.Repository;
 
 
 import javax.sql.DataSource;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
