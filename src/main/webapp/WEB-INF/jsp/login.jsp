@@ -5,13 +5,6 @@
     <title>Login | Endava Training Application</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
     <link href="${pageContext.request.contextPath}/resources/css/index.css" rel="stylesheet" >
-    <%--<script type = "text/javascript" >--%>
-        <%--function disableBackButton()--%>
-        <%--{--%>
-            <%--window.history.forward();--%>
-        <%--}--%>
-        <%--setTimeout("disableBackButton()", 0);--%>
-    <%--</script>--%>
 </head>
 <body>
 

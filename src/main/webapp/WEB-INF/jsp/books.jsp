@@ -18,8 +18,8 @@
          <a class="navbar-brand" href="#">E-Library</a>
        </div>
        <ul class="nav navbar-nav">
-         <li class="active"><a href="home.htm">Home</a></li>
-         <li><a href="books.htm">Books</a></li>
+         <li><a href="home.htm">Home</a></li>
+         <li class="active"><a href="books.htm">Books</a></li>
          <li><a href="#">Page 2</a></li>
          <li><a href="cart.htm">Shopping Cart</a></li>
        </ul>
