@@ -7,7 +7,8 @@
 
 http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 http://www.springframework.org/schema/context
-http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/p ">
 
     <context:component-scan base-package="com.is"></context:component-scan>
     <context:annotation-config></context:annotation-config>
@@ -16,9 +17,9 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass"
-                  value="org.springframework.web.servlet.view.JstlView" />
-        <property name="prefix" value="/WEB-INF/jsp/" />
-        <property name="suffix" value=".jsp" />
+                  value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
     <bean id="dataSource"
@@ -29,23 +30,7 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.
         <property name="password" value="admin"/>
     </bean>
 
-    <!--<mvc:interceptors>-->
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping path="/**/*"/>-->
-            <!--<bean id="webContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">-->
-                <!--<property name="cacheSeconds" value="0"/>-->
-                <!--<property name="useExpiresHeader" value="true"/>-->
-                <!--<property name="useCacheControlHeader" value="true"/>-->
-                <!--<property name="useCacheControlNoStore" value="true"/>-->
-            <!--</bean>-->
-        <!--</mvc:interceptor>-->
-    <!--</mvc:interceptors>-->
 
-     <!--Definition for bean-->
-    <!--<bean id="defaultUserDao"-->
-    <!--class="com.is.implementation.DefaultUserDao">-->
-    <!--<property name="dataSource" ref="dataSource"/>-->
-    <!--</bean>-->
 </beans>
 
 

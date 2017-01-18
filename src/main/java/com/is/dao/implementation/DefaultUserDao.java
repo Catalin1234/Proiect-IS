@@ -1,13 +1,7 @@
 package com.is.dao.implementation;
 
 import com.is.dao.UserDao;
-import com.is.dao.mapper.EnrollmentRowMapper;
-import com.is.dao.mapper.RatingRowMapper;
-import com.is.dao.mapper.TrainingRowMapper;
 import com.is.dao.mapper.UserRowMapper;
-import com.is.model.Enrollment;
-import com.is.model.Rating;
-import com.is.model.Training;
 import com.is.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -55,38 +49,7 @@ public class DefaultUserDao implements UserDao {
         return listOfUsers;
     }
 
-    @Override
-    public boolean registerEmployeeForUpcomingTraining(User user, String trainingNameToSeek) {
-        namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
-        jdbcTemplate = new JdbcTemplate(dataSource);
-        MapSqlParameterSource mapSqlParameterSource = new MapSqlParameterSource("training", trainingNameToSeek);
-        String sql = "SELECT * from training WHERE trainingName = :training";
-        Training trainingToRegisterAt = namedParameterJdbcTemplate.queryForObject(sql, mapSqlParameterSource, new TrainingRowMapper());
-        int userId = user.getUserId();
-        int trainingId = trainingToRegisterAt.getTrainingId();
-        String sqlCheckEnrollment = "select * from enrollment";
-        List<Enrollment> listOfEnrollments = jdbcTemplate.query(sqlCheckEnrollment, new EnrollmentRowMapper());
-        for (Enrollment enrollment : listOfEnrollments) {
-            if (enrollment.getUserId() == userId && enrollment.getTrainingId() == trainingId) {
-                System.out.println("Employee already registered");
-                return false;
-            }
-        }
-        //Inserting into the enrollment table
-        String insertSql = "INSERT INTO enrollment " + "(trainingId,userId,hasVoted) VALUES (?,?,?)";
-        jdbcTemplate.update(insertSql, new Object[]{trainingToRegisterAt.getTrainingId(), user.getUserId(), 0});
-        System.out.println("We have enrolled the employee and increased the number of people");
-        return true;
-    }
 
-    @Override
-    public List<Training> employeeViewTrainings(User user) {
-        jdbcTemplate = new JdbcTemplate(dataSource);
-        String grade = user.getGrade();
-        String sql = "select * from training where grade = '" + grade + "'";
-        List<Training> listOfTrainings = jdbcTemplate.query(sql, new TrainingRowMapper());
-        return listOfTrainings;
-    }
 
 
     public boolean isValidUser(String username, String password) {
@@ -105,85 +68,21 @@ public class DefaultUserDao implements UserDao {
     }
 
     @Override
-    public float ratingForTraining(String nameOfTraining) {
-        jdbcTemplate = new JdbcTemplate(dataSource);
-        String sql = "SELECT trainingID FROM training WHERE trainingName = '" + nameOfTraining + "'";
-        int trainingID = jdbcTemplate.queryForObject(sql, Integer.class);
-        String sql1 = "SELECT * FROM rating WHERE trainingId = " + trainingID;
-        Rating rating = jdbcTemplate.queryForObject(sql1, new RatingRowMapper());
-
-        return rating.getOverall();
-    }
-
-    @Override
-    public HashMap<String, Rating> employeeViewRatingsForTrainings() {
-        HashMap hashMap = new HashMap<String, Rating>();
-        jdbcTemplate = new JdbcTemplate(dataSource);
-        String sql = "SELECT * FROM rating";
-        String sql1;
-        String trainingName;
-        List<Rating> ratings = jdbcTemplate.query(sql, new RatingRowMapper());
-        for (Rating rating : ratings) {
-            sql1 = "SELECT trainingName FROM training WHERE trainingID=" + rating.getTrainingId();
-            trainingName = jdbcTemplate.queryForObject(sql1, String.class);
-            hashMap.put(trainingName, rating);
-        }
-        return hashMap;
-    }
-
-    public boolean canEmployeeVote(User user, int trainingId) {
-        String sql = "select hasVoted from enrollment where trainingId=" + trainingId +" and userId = " + user.getUserId()+";";
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-        System.out.println(user.getUserId());
-        System.out.println(trainingId);
-        String sqlCount = "select count(*) from enrollment where userId = " + user.getUserId()+" and trainingId = "+trainingId+";";
-
-        int count = jdbcTemplate.queryForObject(sqlCount, Integer.class);
-        System.out.println(count);
-        if(count > 0) {
-            int hasVoted = jdbcTemplate.queryForObject(sql, Integer.class);
-            System.out.println(hasVoted);
-            if (hasVoted == 1) {
+    public boolean validUserName(String userName) {
+        for(User user : this.getAllUsers()){
+            if (user.getUsername().equals(userName)){
+                System.out.println("Exista deja");
                 return false;
-            } else {
-                return true;
             }
-        } else {
-            return false;
         }
+        System.out.println("username valid");
+        return true;
     }
-
     @Override
-    public void registerEmployeeRating(int userId, int trainingId, int rate) {
-        int oldNumberOfSubmits = 0;
-        int newNumberOfSubmits = 1;
-        float newOverall;
-        String insertSql;
+    public void registerUser(User user){
         jdbcTemplate = new JdbcTemplate(dataSource);
-        NamedParameterJdbcTemplate namedParameterjdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
-
-        String sql1 = "SELECT count(*) FROM rating WHERE trainingId =" + trainingId;
-        exists = jdbcTemplate.queryForObject(sql1, Integer.class);
-
-        if (exists == 1) {
-            String sql = "SELECT * FROM rating WHERE trainingId =:tId";
-            Map<String, Object> parameters = new HashMap<String, Object>();
-            parameters.put("tId", trainingId);
-            Rating rating = namedParameterjdbcTemplate.queryForObject(sql, parameters, new RatingRowMapper());
-            float oldOverall = rating.getOverall();
-            oldNumberOfSubmits = rating.getNumberOfSubmits();
-            newNumberOfSubmits = oldNumberOfSubmits + 1;
-            newOverall = ((oldOverall * oldNumberOfSubmits) + rate) / newNumberOfSubmits;
-            insertSql = "UPDATE rating SET numberOfSubmits=" + newNumberOfSubmits + ",overall=" + newOverall + " WHERE trainingId=" + trainingId +";";
-            jdbcTemplate.update(insertSql);
-        } else {
-            newOverall = rate;
-            insertSql = "INSERT INTO rating VALUES (?,?,?)";
-            jdbcTemplate.update(insertSql, new Object[]{trainingId, newNumberOfSubmits, newOverall});
-        }
-
-        jdbcTemplate.update("update enrollment set hasVoted=1 where userId ="+userId + " and trainingId=" + trainingId);
-
+        jdbcTemplate.update("insert into user (`userId`, `password`, `userName`, `firstName`, `lastName`, `role`) values (?,?,?,?,?,?)",
+                new Object[]{user.getUserId(),user.getPassword(),user.getUsername(),user.getFirstName(),user.getLastName(),user.getRole()});
 
     }
 

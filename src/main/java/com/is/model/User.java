@@ -10,16 +10,14 @@ public class User {
     private String firstName;
     private String lastName;
     private int role;
-    private String grade;
 
-    public User(int userId, String password, String username, String firstName, String lastName, int role, String grade) {
+    public User(int userId, String password, String username, String firstName, String lastName, int role) {
         this.userId = userId;
         this.password = password;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
-        this.grade = grade;
     }
 
     public User() {
@@ -74,13 +72,6 @@ public class User {
         this.role = role;
     }
 
-    public String getGrade() {
-        return grade;
-    }
-
-    public void setGrade(String grade) {
-        this.grade = grade;
-    }
 
     @Override
     public String toString() {
@@ -91,7 +82,6 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", role=" + role +
-                ", grade='" + grade + '\'' +
                 '}';
     }
 }

@@ -5,6 +5,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  <c:redirect url="login.htm"/>
+  <c:redirect url="register.htm"/>
   </body>
 </html>

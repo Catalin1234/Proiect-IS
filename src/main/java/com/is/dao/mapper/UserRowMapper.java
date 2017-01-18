@@ -20,7 +20,6 @@ public class UserRowMapper implements RowMapper<User> {
         user.setFirstName(rs.getString(4));
         user.setLastName(rs.getString(5));
         user.setRole(rs.getInt(6));
-        user.setGrade(rs.getString(7));
         return user;
     }
 }
